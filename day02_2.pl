@@ -33,7 +33,7 @@ foreach my $step (@steps) {
     my @step = split(//, $step);
     foreach my $move (@step) {
         ($row, $col) = get_pos($move, $row, $col);
-#        print "move: $move moving to $keys[$row][$col]\n";
+        # print "move: $move moving to $keys[$row][$col]\n";
     }
     print "\t$keys[$row][$col]\n";
 }
