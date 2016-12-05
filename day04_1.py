@@ -1,6 +1,6 @@
 #!/usr/bin/python3.5
 
-import sys, re, operator
+import sys, re
 
 def checksum(letters, key):
     sorted_key = [v[0] for v in sorted(letters.items(), key=lambda kv: (-kv[1], kv[0]))]
