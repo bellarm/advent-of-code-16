@@ -18,6 +18,7 @@ def support_ssl(ip):
             is_in_brackets = 0
         else:
             is_in_brackets = 1
+    # compares all the patterns from inside and outside brackets
     for pat1 in patterns_inside_bracket:
         for pat2 in patterns_outside_bracket:
             if pat1[0] == pat2[1] and pat1[1] == pat2[0]:
