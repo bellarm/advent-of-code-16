@@ -80,6 +80,7 @@ while len(to_visit):
     to_visit.remove(to_visit[0])
 
 count = 0
+[x, y] = pred[y][x]
 while True:
     if x == 1 and y == 1:
         break
