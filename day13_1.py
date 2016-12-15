@@ -87,6 +87,5 @@ while True:
     [x, y] = pred[y][x]
     count += 1
     
-    
 show_maze(maze)
 print(count)
