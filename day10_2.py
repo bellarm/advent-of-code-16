@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import sys, re, time
+import sys, re
 
 lines = [line.rstrip() for line in sys.stdin]
 # index 0 for lo and 1 for hi value
@@ -7,7 +7,6 @@ bots_value = [[0 for i in range(2)] for j in range(210)]
 out = []
 
 def assign_value(bot, val):
-    global bots_value
     if bots_value[bot][0] == 0:
         bots_value[bot][0] = val
     elif bots_value[bot][0] > val:
@@ -24,6 +23,7 @@ while len(lines):
             val = int(line.split(' ')[1])
             assign_value(bot, val)
             lines.remove(line)
+            continue
         bot = int(line.split(' ')[1])
         if bots_value[bot][0] == 0 or bots_value[bot][1] == 0:
             continue

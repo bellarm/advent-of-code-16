@@ -12,7 +12,6 @@ def print_stat(bot):
     print("\thi: %d" % (bots_value[bot][1]))
 
 def assign_value(bot, val):
-    global bots_value
     if bots_value[bot][0] == -1:
         bots_value[bot][0] = val
     elif bots_value[bot][0] > val:
@@ -22,10 +21,11 @@ def assign_value(bot, val):
         bots_value[bot][1] = val
 
 def give_chip(bot):
-    global bots_value
-    global bots_give
     # base conditions
-    if bots_give[bot][0] == -1 or bots_give[bot][1] == -1 or bots_value[bot][0] == -1 or bots_value[bot][1] == -1:
+    if (bots_give[bot][0] == -1 or 
+        bots_give[bot][1] == -1 or 
+        bots_value[bot][0] == -1 or 
+        bots_value[bot][1] == -1):
         return
     if bots_value[bot][0] == 17 and bots_value[bot][1] == 61:
         print(bot)
@@ -61,6 +61,6 @@ for line in instructions:
         if hi_to == "bot":
             bots_give[bot][1] = hi
     
-for bot in range(209):
+for bot in range(210):
     if bots_value[bot][0] != -1 and bots_value[bot][1] != -1:
         give_chip(bot)
