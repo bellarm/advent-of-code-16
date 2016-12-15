@@ -79,7 +79,7 @@ while len(to_visit):
         to_visit.append((x, y-1))
     to_visit.remove(to_visit[0])
 
-count = 0
+count = 1
 [x, y] = pred[y][x]
 while True:
     if x == 1 and y == 1:
@@ -87,6 +87,5 @@ while True:
     maze[y][x] = 'O'
     [x, y] = pred[y][x]
     count += 1
-    
 show_maze(maze)
 print(count)
