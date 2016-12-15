@@ -19,22 +19,6 @@ def is_open_space(x, y):
         return False
     return True
 
-def is_dead_end(x, y):
-    closed = 0
-    if maze[y][x] == '#':
-        return True
-    if maze[y][x+1] == '#':
-        closed += 1
-    if maze[y][x-1] == '#':
-        closed += 1
-    if maze[y+1][x] == '#':
-        closed += 1
-    if maze[y-1][x] == '#':
-        closed += 1
-    if closed >= 3:
-        return True
-    return False
-
 # create maze
 maze = [['0' for i in range(50)] for j in range(50)]
 for y in range(50):
