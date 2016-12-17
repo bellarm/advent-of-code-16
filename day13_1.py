@@ -37,10 +37,9 @@ visited = [[False for i in range(50)] for j in range(50)]
 pred = [[(0,0) for i in range(50)] for j in range(50)]
 to_visit = [(1, 1), ]
 while len(to_visit):
-    x = to_visit[0][0]
-    y = to_visit[0][1]
+    [x, y] = to_visit[0]
+    to_visit.remove(to_visit[0])
     if visited[y][x]:
-        to_visit.remove(to_visit[0])
         continue
     visited[y][x] = True
     if x == 31 and y == 39:
@@ -61,13 +60,10 @@ while len(to_visit):
         if pred[y-1][x] == (0,0):
             pred[y-1][x] = (x, y)
         to_visit.append((x, y-1))
-    to_visit.remove(to_visit[0])
 
 count = 1
 [x, y] = pred[y][x]
-while True:
-    if x == 1 and y == 1:
-        break
+while maze[y][x] != 'S':
     maze[y][x] = 'O'
     [x, y] = pred[y][x]
     count += 1

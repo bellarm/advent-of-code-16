@@ -38,10 +38,9 @@ dist = [[-1 for i in range(50)] for j in range(50)]
 to_visit = [(1, 1), ]
 dist[1][1] = 0
 while len(to_visit):
-    x = to_visit[0][0]
-    y = to_visit[0][1]
+    [x, y] = to_visit[0]
+    to_visit.remove(to_visit[0])
     if visited[y][x]:
-        to_visit.remove(to_visit[0])
         continue
     if dist[y][x] <= 50:
         maze[y][x] = '0'
@@ -65,6 +64,5 @@ while len(to_visit):
         if dist[y-1][x] == -1:
             dist[y-1][x] = dist[y][x]+1
         to_visit.append((x, y-1))
-    to_visit.remove(to_visit[0])
 show_maze(maze)
 print(count)
