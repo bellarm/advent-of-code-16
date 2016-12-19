@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys, re, time
+import sys, re
 
 lines = [line.rstrip() for line in sys.stdin]
 regs = {'a': 0, 'b': 0, 'c': 1, 'd': 0}
