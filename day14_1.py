@@ -6,7 +6,7 @@ def check_next_k(i, c):
         m = hashlib.md5()
         m.update(salt.encode()+str(i+y).encode())
         hashed = m.hexdigest()
-        for j in range(len(hashed)-5):
+        for j in range(len(hashed)-4):
             if c == hashed[j] == hashed[j+1] == hashed[j+2] == hashed[j+3] == hashed[j+4]:
                 return True
     return False
