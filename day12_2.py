@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-import sys, re
+import sys, re, time
 
 lines = [line.rstrip() for line in sys.stdin]
-regs = {'a': 0, 'b': 0, 'c': 0, 'd': 0}
+regs = {'a': 0, 'b': 0, 'c': 1, 'd': 0}
 i = 0
 while i < len(lines):
     if lines[i].startswith('cpy'):
