@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import hashlib, sys
+import hashlib
 def is_open(c):
     if c == 'b' or c == 'c' or c == 'd' or c == 'e' or c == 'f':
         return True
