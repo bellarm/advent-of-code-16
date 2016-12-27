@@ -57,6 +57,7 @@ for n in comb:
     cur_dist = 0
     for i in range(len(n)-1):
         cur_dist += dist_between[n[i]][n[i+1]]
+    cur_dist += dist_between[n[i+1]][0]
     if cur_dist < shortest_dist:
         shortest_dist = cur_dist
 print(shortest_dist)
